@@ -1,0 +1,25 @@
+import * as Types from './actionType';
+import http from '@/untils/http';
+
+
+export const onsignIn = (value) => ({
+  type: Types.SIGN_IN,
+  value
+})
+
+export const asyncSignIn = (values) => {
+  return (dispatch) => {
+    http.post('/sign-in', JSON.stringify(values),{
+      headers:{
+        'Content-Type':"application/json"
+      }
+    }).then(res => {
+      dispatch(onsignIn(res.data));
+      window.localStorage.setItem('user',JSON.stringify(res.data));
+    })
+  }
+}
+
+
+
+
