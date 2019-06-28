@@ -1,6 +1,6 @@
 
 import * as Types from './actionType'
-const initUser = window.localStorage.getItem('user') ? JSON.parse(Window.localStorage.getItem('user')) : {email:''};
+const initUser = window.localStorage.getItem('user') ?  window.localStorage.getItem('user') : {email:''}
 export default (state = initUser, action) => {
   let newState = JSON.parse(JSON.stringify(state))
 
