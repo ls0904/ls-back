@@ -10,13 +10,15 @@ export const HomeWrap = styled.div`
 export const SiderWrap = styled(Sider)`
     .list-a{
         margin-top: -40px;
-        margin-left: 30px;
+        margin-left: 50px;
     }
 `;
 export const ContentWrap = styled(Content)`
     /* background: rgb(255, 255, 255); */
+    overflow-y:auto
 `;
 export const FooterWrap = styled(Footer)`
+    margin: -40px;
 `;
 export const HeaderWrap = styled(Header)`
     background: rgb(255, 255, 255);

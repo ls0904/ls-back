@@ -67,7 +67,7 @@ import { SignInput } from './style'
               ]
             })(
               <Checkbox>
-                I have read the <a href="">agreement</a>
+                I have read the <a href="/sign">agreement</a>
               </Checkbox>,
             )}
           </Form.Item>

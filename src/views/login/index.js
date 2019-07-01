@@ -51,13 +51,13 @@ class Login extends Component {
               valuePropName: 'checked',
               initialValue: true,
             })(<Checkbox className="login-form-forrig">Remember me</Checkbox>)}
-            <a className="login-form-forgot" href="#">
+            <a className="login-form-forgot" href='/login'>
               Forgot password
             </a>
             <Button type="primary" htmlType="submit" className="login-form-button">
               Log in
             </Button>
-            Or <a href="#">register now!</a>
+            Or <a href='/login'>register now!</a>
           </Form.Item>
         </Form>
       </InputVal>
@@ -69,9 +69,9 @@ const LoginUi = Form.create({})(Login);
 
 export default connect (
   null,
-  dispatch => ({
+  (dispatch,props) => ({
     handleSignIn (values) {
-      dispatch(actions.asyncSignIn(values))
+      dispatch(actions.asyncSignIn(values,props))
     }
   })
 )(LoginUi);
