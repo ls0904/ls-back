@@ -33,7 +33,7 @@ import { Button, Modal, Form, Input } from 'antd'
   ]
 
   showModal = (visible) => {
-    let curGradeInfo = this.props.list.find(item => item._id ===this.props.curGradeId);
+    let curGradeInfo = this.props.list.find(item => item._id ===this.props.curGradeId) || {};
     console.log(curGradeInfo);
     // console.log(this.props.curGradeId);
    if(visible) {

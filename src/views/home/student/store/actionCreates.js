@@ -43,3 +43,21 @@ export const onChgCurStudentId = (id) => ({
   type: Types.SET_CUR_STUDENT_ID,
   id
 })
+
+export const asyncUpdStudent = (values)  => {
+  return (dispatch, getState) => {
+    let { student:{ curStudentId } } = getState()
+    http.put(`/api/student/${curStudentId}`, JSON.stringify(values), {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(res => {
+      // dispatch({
+      //   type: Types.UPD_STUDENT,
+      //   id:curStudentId,
+      //   values
+      // })
+      dispatch(asyncStudentList()); 
+    })
+  }
+}

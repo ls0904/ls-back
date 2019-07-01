@@ -26,6 +26,10 @@ export default (state = initState, action) => {
   if(action.type === Types.SET_CUR_STUDENT_ID) {
     newState.curStudentId = action.id
   }
+  if(action.type === Types.UPD_STUDENT) {
+    let index = newState.list.findIndex( item => item._id === action.id);
+    newState.list[index] = {...newState.list[index], ...action.values};
+  }
   return newState
 }
 

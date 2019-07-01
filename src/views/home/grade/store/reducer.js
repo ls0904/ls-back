@@ -4,7 +4,7 @@ import * as Types from './actionTypes';
 const initState = {
   curGradeId:'', //当前操作的班级Id
   visible:false,
-  list:[]
+  list:[] //班级数据
 }
 export default(state = initState, action) => {
   let newState = JSON.parse(JSON.stringify(state));
